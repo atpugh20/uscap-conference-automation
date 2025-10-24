@@ -1,0 +1,42 @@
+body {
+    background-color: grey;
+}
+
+.upcoming-courses-section {
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.course-card {
+    background-color: white;
+    max-width: 350px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.course-lower {
+    padding: 20px;
+}
+
+.course-image {
+    width: 350px;
+    height: auto;
+    object-fit:fill;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.course-title,
+.course-location,
+.course-date {
+    margin-top: 10px;
+}
+
+.course-title {
+    height: 100px;
+    font-size: 20px;
+    background-color: red;
+}
