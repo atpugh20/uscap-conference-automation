@@ -11,6 +11,8 @@
 
 const upcomingCoursesSection = document.getElementById("upcoming-courses-section");
 
+// Image: Can use XCD file system and use the course ID as the filename
+
 const courseData = [
     {
         title: "Tips and Hints in Surgical Pathology",
@@ -27,7 +29,15 @@ const courseData = [
         endDate: "December 5, 2025",
         link: "https://google.com",
         imageLink: "https://uscap.org/wp-content/uploads/2025/10/GEN450X325.png"
-    }
+    },
+    {
+        title: "Practical Neoplastic and Non-Neoplastic Bone Pathology for the Surgical Pathologist",
+        location: "Palm Springs, CA",
+        startDate: "December 8, 2025",
+        endDate: "December 9, 2025",
+        link: "https://google.com",
+        imageLink: "https://uscap.org/wp-content/uploads/2025/10/Neoplastic_COURSE-IMAGE450x325-scaled.png"
+    },
 ];
 
 /***** FRONTEND ELEMENT CREATION *****/
@@ -38,13 +48,17 @@ function getCard(courseObject) {
      * as a single card, then returns it as a string.
      */
     return `
-        <div class="course-card" id="course-card">
-            <img class="course-image" id="course-image" src="${courseObject.imageLink}" alt="">
+        <div class="course-card" id="course-card" onclick="location.href='${courseObject.link}'">
+            <div class="course-image-frame" id="course-image-frame">
+                <img class="course-image" id="course-image" src="${courseObject.imageLink}" alt="">
+            </div>
             <div class="course-lower" id="course-lower">
-                <h4 class="course-title" id="course-title">${courseObject.title}</h4>
-                <p class="course-location" id="course-location">${courseObject.location}</p>
-                <p class="course-date" id="course-date">${courseObject.startDate} to <br> ${courseObject.endDate}</p>
-                <a class="et_pb_button et_pb_promo_button" href="${courseObject.link}" target="_blank" data-feathr-click-track="true" data-feathr-link-aids="5ba2ae703ef109532f9c7513">Learn More</a>
+                <h3 class="course-title et_pb_module_header" id="course-title">${courseObject.title}</h3>
+                <strong>
+                    <p class="course-location" id="course-location">${courseObject.location}</p>
+                    <p class="course-date" id="course-date">${courseObject.startDate}<br>to<br>${courseObject.endDate}</p>
+                </strong>
+                <a class="learn-more-button et_pb_button et_pb_promo_button" href="${courseObject.link}" target="_blank" data-feathr-click-track="true" data-feathr-link-aids="5ba2ae703ef109532f9c7513">Learn More</a>
             </div>
         </div>
     `;
