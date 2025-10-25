@@ -6,11 +6,6 @@
  * upcoming courses cards on the home page of uscap.org.
  */
 
-
-/***** XCD API HANLDER *****/
-
-const upcomingCoursesSection = document.getElementById("upcoming-courses-section");
-
 // Image: Can use XCD file system and use the course ID as the filename
 
 const courseData = [
@@ -41,6 +36,8 @@ const courseData = [
 ];
 
 /***** FRONTEND ELEMENT CREATION *****/
+
+const upcomingCoursesSection = document.getElementById("upcoming-courses-section");
 
 function getCard(courseObject) { 
     /**
