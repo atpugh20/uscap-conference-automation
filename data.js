@@ -2,9 +2,15 @@
  * This data is pulled from the XCD API and cleaned using python.
  * The python project is: https://github.com/atpugh20/course-data-cleanup
  * 
- * In Divi, you will need to combine this and index.js into one file
+ * Make sure to delete any events that are not to be displayed. 
+ * 
+ * In Divi, you will need to combine this and index.js into one file.
+ * (place this above code in index.js)
  */
 
+// Scroll past to see the JS code
+
+/***** DATA FOR CARDS *****/
 const courseData = [
 {
 "event_name": "Tips and Hints in Surgical Pathology",

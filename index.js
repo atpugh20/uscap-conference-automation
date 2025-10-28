@@ -1,4 +1,3 @@
- // 
 /**
  * The purpose of this code is to automatically generate and update the
  * upcoming courses cards on the home page of uscap.org.
@@ -45,11 +44,10 @@ function createCards(allCardData, targetElement) {
     // let today = new Date("2025", 11, "07"); // Month is 0 indexed (Jan = 0, Dec = 11)
 
     for (let i = 0; i < allCardData.length; i++) {
-        if (allCardData[i].image_url == "") continue;
-
         let splitDate = allCardData[i].start_date.split('/');
         let courseDate = new Date(splitDate[2], splitDate[0] - 1, splitDate[1]); 
-
+        
+        // If the course has not passed, create a card. Do not create a card if today or in the past 
         if (courseDate > today) {
             targetElement.innerHTML += getCard(allCardData[i]);
             counter++;
