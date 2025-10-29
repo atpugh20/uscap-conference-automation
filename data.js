@@ -10,6 +10,8 @@
 
 // Scroll past to see the JS code
 
+// Local API key here (Do not upload to WordPress)
+
 /***** DATA FOR CARDS *****/
 const courseData = [
 {

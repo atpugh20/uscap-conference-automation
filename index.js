@@ -42,6 +42,9 @@ function createCards(allCardData, targetElement) {
     let counter = 0;
     let today = Date.now(); 
     // let today = new Date("2025", 11, "07"); // Month is 0 indexed (Jan = 0, Dec = 11)
+    let divStart = '<div class="card-duo" id="card-duo">';
+
+    let elementHTML = "";
 
     for (let i = 0; i < allCardData.length; i++) {
         let splitDate = allCardData[i].start_date.split('/');
@@ -49,11 +52,16 @@ function createCards(allCardData, targetElement) {
         
         // If the course has not passed, create a card. Do not create a card if today or in the past 
         if (courseDate > today) {
-            targetElement.innerHTML += getCard(allCardData[i]);
+            if (counter % 2 == 0) elementHTML += divStart;
+            elementHTML += getCard(allCardData[i]);
+            if (counter % 2 != 0) elementHTML += "</div>";
             counter++;
         }
         
-        if (counter === 4) return;
+        if (counter === 4) {
+            targetElement.innerHTML += elementHTML;
+            return;
+        }
     }
 }
 
