@@ -17,7 +17,7 @@ function getCard(courseObject) {
      * as a single card, then returns it as a string.
      */
     return `
-        <div class="course-card" id="course-card" onclick="location.href='${courseObject.link}'">
+        <div class="course-card" id="course-card" onclick="location.href='${courseObject.conference_website_url}'">
             <div class="course-image-frame" id="course-image-frame">
                 <img class="course-image" id="course-image" src="${courseObject.image_url}" alt="">
             </div>
